@@ -6898,8 +6898,9 @@ function sFLY(vfly)
 	if flyKeyDown or flyKeyUp then flyKeyDown:Disconnect() flyKeyUp:Disconnect() end
 
 	local T = getRoot(Players.LocalPlayer.Character)
-	local CONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0, E = 0}
-	local lCONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0, E = 0}
+	CONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0}
+lCONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0}
+
 	local SPEED = 0
 
 	local function FLY()
@@ -6931,6 +6932,7 @@ elseif (CONTROL.L + CONTROL.R) == 0 and (CONTROL.F + CONTROL.B) == 0 and (CONTRO
 else
     BV.velocity = Vector3.new(0, 0, 0)
 end
+
 
 				BG.cframe = workspace.CurrentCamera.CoordinateFrame
 			until not FLYING
@@ -6967,8 +6969,7 @@ lCONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0}
 			CONTROL.L = 0
 		elseif KEY:lower() == 'd' then
 			CONTROL.R = 0
-		elseif KEY:lower() == 'q' then
-			CONTROL.E = 0
+	
 		end
 	end)
 	FLY()
@@ -12811,7 +12812,7 @@ task.spawn(function()
 			Exit.ZIndex = 10
 
 			ExitImage.Parent = Exit
-			ExitImage.BackgroundColor3 = Color3.new(1, 1, 1)
+			ExitImage.BackgroundColor3 = Color3.new(1, 1, 1)f
 			ExitImage.BackgroundTransparency = 1
 			ExitImage.Position = UDim2.new(0, 5, 0, 5)
 			ExitImage.Size = UDim2.new(0, 10, 0, 10)
