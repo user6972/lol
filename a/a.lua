@@ -6916,25 +6916,26 @@ function sFLY(vfly)
 		task.spawn(function()
 			repeat wait()
 				if not vfly and Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid') then
-					Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').PlatformStand = true
-				end
-				if CONTROL.L + CONTROL.R ~= 0 or CONTROL.F + CONTROL.B ~= 0 or CONTROL.Q ~= 0 then
-					SPEED = 50
-				elseif not (CONTROL.L + CONTROL.R ~= 0 or CONTROL.F + CONTROL.B ~= 0 or CONTROL.Q ~= 0) and SPEED ~= 0 then
-					SPEED = 0
-				end
-				if (CONTROL.L + CONTROL.R) ~= 0 or (CONTROL.F + CONTROL.B) ~= 0 or (CONTROL.Q + CONTROL.E) ~= 0 then
-					BV.velocity = ((workspace.CurrentCamera.CoordinateFrame.lookVector * (CONTROL.F + CONTROL.B)) + ((workspace.CurrentCamera.CoordinateFrame * CFrame.new(CONTROL.L + CONTROL.R, (CONTROL.F + CONTROL.B + CONTROL.Q + CONTROL.E) * 0.2, 0).p) - workspace.CurrentCamera.CoordinateFrame.p)) * SPEED
-					lCONTROL = {F = CONTROL.F, B = CONTROL.B, L = CONTROL.L, R = CONTROL.R}
-				elseif (CONTROL.L + CONTROL.R) == 0 and (CONTROL.F + CONTROL.B) == 0 and (CONTROL.Q + CONTROL.O) == 0 and SPEED ~= 0 then
-					BV.velocity = ((workspace.CurrentCamera.CoordinateFrame.lookVector * (lCONTROL.F + lCONTROL.B)) + ((workspace.CurrentCamera.CoordinateFrame * CFrame.new(lCONTROL.L + lCONTROL.R, (lCONTROL.F + lCONTROL.B + CONTROL.Q + CONTROL.O) * 0.2, 0).p) - workspace.CurrentCamera.CoordinateFrame.p)) * SPEED
-				else
-					BV.velocity = Vector3.new(0, 0, 0)
-				end
+    Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').PlatformStand = true
+end
+if CONTROL.L + CONTROL.R ~= 0 or CONTROL.F + CONTROL.B ~= 0 or CONTROL.Q ~= 0 then
+    SPEED = 50
+elseif not (CONTROL.L + CONTROL.R ~= 0 or CONTROL.F + CONTROL.B ~= 0 or CONTROL.Q ~= 0) and SPEED ~= 0 then
+    SPEED = 0
+end
+if (CONTROL.L + CONTROL.R) ~= 0 or (CONTROL.F + CONTROL.B) ~= 0 or (CONTROL.Q) ~= 0 then
+    BV.velocity = ((workspace.CurrentCamera.CoordinateFrame.lookVector * (CONTROL.F + CONTROL.B)) + ((workspace.CurrentCamera.CoordinateFrame * CFrame.new(CONTROL.L + CONTROL.R, (CONTROL.F + CONTROL.B + CONTROL.Q) * 0.2, 0).p) - workspace.CurrentCamera.CoordinateFrame.p)) * SPEED
+    lCONTROL = {F = CONTROL.F, B = CONTROL.B, L = CONTROL.L, R = CONTROL.R}
+elseif (CONTROL.L + CONTROL.R) == 0 and (CONTROL.F + CONTROL.B) == 0 and (CONTROL.Q) == 0 and SPEED ~= 0 then
+    BV.velocity = ((workspace.CurrentCamera.CoordinateFrame.lookVector * (lCONTROL.F + lCONTROL.B)) + ((workspace.CurrentCamera.CoordinateFrame * CFrame.new(lCONTROL.L + lCONTROL.R, (lCONTROL.F + lCONTROL.B + CONTROL.Q) * 0.2, 0).p) - workspace.CurrentCamera.CoordinateFrame.p)) * SPEED
+else
+    BV.velocity = Vector3.new(0, 0, 0)
+end
+
 				BG.cframe = workspace.CurrentCamera.CoordinateFrame
 			until not FLYING
-			CONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0, O = 0}
-			lCONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0, O = 0}
+			CONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0, E = 0}
+			lCONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0, E = 0}
 			SPEED = 0
 			BG:Destroy()
 			BV:Destroy()
