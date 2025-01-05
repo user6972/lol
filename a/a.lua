@@ -6933,7 +6933,6 @@ else
     BV.velocity = Vector3.new(0, 0, 0)
 end
 
-
 				BG.cframe = workspace.CurrentCamera.CoordinateFrame
 			until not FLYING
 			CONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0}
