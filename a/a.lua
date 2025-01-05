@@ -7207,16 +7207,10 @@ addcmd('float', {'platform'},function(args, speaker)
 					FloatValue = FloatValue - 0.5
 				end
 			end)
-			eDown = IYMouse.KeyDown:Connect(function(KEY)
-				if KEY == 'e' then
-					FloatValue = FloatValue + 1.5
-				end
-			end)
-			floatDied = speaker.Character:FindFirstChildOfClass('Humanoid').Died:Connect(function()
+				floatDied = speaker.Character:FindFirstChildOfClass('Humanoid').Died:Connect(function()
 				FloatingFunc:Disconnect()
 				Float:Destroy()
 				qUp:Disconnect()
-				eUp:Disconnect()
 				qDown:Disconnect()
 				eDown:Disconnect()
 				floatDied:Disconnect()
@@ -7228,7 +7222,6 @@ addcmd('float', {'platform'},function(args, speaker)
 					FloatingFunc:Disconnect()
 					Float:Destroy()
 					qUp:Disconnect()
-					eUp:Disconnect()
 					qDown:Disconnect()
 					eDown:Disconnect()
 					floatDied:Disconnect()
@@ -7249,7 +7242,6 @@ addcmd('unfloat',{'nofloat','unplatform','noplatform'},function(args, speaker)
 	if floatDied then
 		FloatingFunc:Disconnect()
 		qUp:Disconnect()
-		eUp:Disconnect()
 		qDown:Disconnect()
 		eDown:Disconnect()
 		floatDied:Disconnect()
