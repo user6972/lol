@@ -6934,8 +6934,9 @@ end
 
 				BG.cframe = workspace.CurrentCamera.CoordinateFrame
 			until not FLYING
-			CONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0, E = 0}
-			lCONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0, E = 0}
+			CONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0}
+lCONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0}
+
 			SPEED = 0
 			BG:Destroy()
 			BV:Destroy()
