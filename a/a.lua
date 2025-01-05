@@ -6968,8 +6968,7 @@ lCONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0}
 			CONTROL.L = 0
 		elseif KEY:lower() == 'd' then
 			CONTROL.R = 0
-		elseif KEY:lower() == 'e' then
-			CONTROL.Q = 0
+		
 		
 		end
 	end)
