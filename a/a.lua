@@ -6953,11 +6953,8 @@ lCONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0}
 		elseif KEY:lower() == 'a' then
 			CONTROL.L = - (vfly and vehicleflyspeed or iyflyspeed)
 		elseif KEY:lower() == 'd' then 
-			CONTROL.R = (vfly and vehicleflyspeed or iyflyspeed)
-		elseif QEfly and KEY:lower() == 'e' then
+			
 			CONTROL.Q = (vfly and vehicleflyspeed or iyflyspeed)*2
-		elseif QEfly and KEY:lower() == 'q' then
-			CONTROL.E = -(vfly and vehicleflyspeed or iyflyspeed)*2
 		end
 		pcall(function() workspace.CurrentCamera.CameraType = Enum.CameraType.Track end)
 	end)
@@ -6970,8 +6967,6 @@ lCONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0}
 			CONTROL.L = 0
 		elseif KEY:lower() == 'd' then
 			CONTROL.R = 0
-		elseif KEY:lower() == 'e' then
-			CONTROL.Q = 0
 		elseif KEY:lower() == 'q' then
 			CONTROL.E = 0
 		end
